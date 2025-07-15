@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+const int N = 5;
+
+int grafo[N][N] = {
+    {0, 1, 1, 0, 0}, 
+    {1, 0, 0, 1, 0},  
+    {1, 0, 0, 0, 1},  
+    {0, 1, 0, 0, 0}, 
+    {0, 0, 1, 0, 0} 
+};
+
+int visitado[N];
+
+void dfs(int nodo) {
+    visitado[nodo] = 1;
+    cout << "Visitando nodo " << nodo << endl;
+    for (int vecino = 0; vecino < N; vecino++) {
+        if (grafo[nodo][vecino] == 1 && visitado[vecino] == 0) {
+            dfs(vecino);
+        }
+    }
+}
+int main() {
+    cout << "Recorrido DFS desde el nodo 0:\n";
+    dfs(0);
+    return 0;
+}
