@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int Sumar(int a, int b)
+{
+  return a+b;
+}
+int main()
+{
+int n1,n2;
+cin>>n1>>n2;
+cout<<Sumar(n1,n2);
+return 0;
+}
